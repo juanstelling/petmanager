@@ -1,0 +1,15 @@
+<div class="global-container">
+  <div class="grid grid-cols-12 gap-8">
+    <div class="col-span-12">
+      <h2>Pet overview</h2>
+    </div>
+    <div class="col-span-3">filters</div>
+    <div class="col-span-9">
+      <ng-container *ngIf="pets$ | async as pets">
+        <ng-container *ngFor="let pet of pets">
+          <app-pet-item [petItem]="pet"></app-pet-item>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

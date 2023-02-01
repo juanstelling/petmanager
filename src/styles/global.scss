@@ -1,0 +1,11 @@
+.global-container {
+  @apply container mx-auto py-16;
+}
+
+.pet-item {
+  @apply my-3 border border-gray-100;
+}
+
+img {
+  @apply w-52;
+}
