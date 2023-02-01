@@ -5,7 +5,7 @@ import { Category, Pet } from 'src/app/core/model/pet.model';
 import { Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
 
-@UntilDestroy()
+@UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-add-pet',
   templateUrl: './add-pet.component.html',
