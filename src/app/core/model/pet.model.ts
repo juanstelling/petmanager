@@ -1,6 +1,6 @@
 export interface Pet {
   id: number;
-  category: Category;
+  category?: Category;
   name: string;
   photoUrls: string[];
   tag: any;
@@ -9,5 +9,5 @@ export interface Pet {
 
 export interface Category {
   id: number;
-  name: string;
+  name?: string;
 }

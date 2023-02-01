@@ -3,9 +3,22 @@
     <div class="col-span-3">
       <img src="../assets/placeholder.jpg" />
     </div>
-    <div class="col-span-9 p-3">
-      <h2 class="pb-7">{{ petItem.name }}</h2>
-      <p>{{ petItem.category.name }} | {{ petItem.status }}</p>
+    <div class="col-span-9 p-4">
+      <h2 class="pb-2">{{ petItem.name ? petItem.name : "Undefined" }}</h2>
+      <p
+        class="status-title"
+        [ngClass]="{
+          available: petItem.status === 'available',
+          pending: petItem.status === 'pending',
+          sold: petItem.status === 'sold'
+        }"
+      >
+        {{ petItem.status }}
+      </p>
+      <p *ngIf="petItem.category">
+        category:
+        {{ petItem.category.name ? petItem.category.name : "Undefined" }}
+      </p>
     </div>
   </div>
 </div>

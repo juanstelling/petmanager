@@ -3,9 +3,26 @@
 }
 
 .pet-item {
-  @apply my-3 border border-gray-100;
+  @apply my-3 border border-gray-100 shadow-md;
 }
 
 img {
-  @apply w-52;
+  @apply w-40;
+}
+
+button {
+  @apply rounded-md bg-slate-800 p-3 text-white;
+}
+
+/* ------------------------------------ Pet status */
+.available {
+  @apply text-green-800;
+}
+
+.pending {
+  @apply text-yellow-700;
+}
+
+.sold {
+  @apply text-red-800;
 }
