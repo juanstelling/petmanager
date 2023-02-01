@@ -4,4 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-manager',
   templateUrl: './manager.component.html',
 })
-export class ManagerComponent {}
+export class ManagerComponent {
+  getCurrentYear(): number {
+    return new Date().getFullYear();
+  }
+}

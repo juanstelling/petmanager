@@ -27,9 +27,9 @@ export class AddPetComponent implements OnInit {
 
   makeForm(): void {
     this.petForm = this.fb.group({
-      name: [' ', Validators.required],
-      status: [' ', Validators.required],
-      category: [' '],
+      name: ['', Validators.required],
+      status: ['', Validators.required],
+      category: [''],
       photoUrls: [''],
       tags: [' '],
     });
@@ -61,7 +61,7 @@ export class AddPetComponent implements OnInit {
       });
     } else {
       this.errorStatus = true;
-      this.errorMessage = 'Please, fill in a required fields ';
+      this.errorMessage = 'Fill in all required fields';
     }
   }
 
