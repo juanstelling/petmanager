@@ -3,7 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PetsService } from 'src/app/core/services/pets.service';
 import { Category, Pet } from 'src/app/core/model/pet.model';
 import { Router } from '@angular/router';
+import { UntilDestroy } from '@ngneat/until-destroy';
 
+@UntilDestroy()
 @Component({
   selector: 'app-add-pet',
   templateUrl: './add-pet.component.html',
@@ -35,7 +37,7 @@ export class AddPetComponent implements OnInit {
     });
   }
 
-  addPet() {
+  addPet(): void {
     if (this.petForm.valid) {
       this.categoryblob = {
         id: this.getRandomId(),
