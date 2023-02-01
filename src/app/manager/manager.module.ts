@@ -4,10 +4,11 @@ import { SharedModule } from '../shared/shared.module';
 import { ManagerRoutingModule } from './manager-routing.module';
 import { ManagerComponent } from './manager.component';
 import { OverviewComponent } from './overview/overview.component';
+import { AddPetComponent } from './add-pet/add-pet.component';
 
 @NgModule({
-  declarations: [ManagerComponent, OverviewComponent],
+  declarations: [ManagerComponent],
   imports: [CommonModule, ManagerRoutingModule, SharedModule],
-  exports: [ManagerComponent],
+  exports: [],
 })
 export class ManagerModule {}

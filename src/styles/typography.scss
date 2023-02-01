@@ -3,7 +3,15 @@
 }
 
 h2 {
+  @apply pb-2 text-4xl font-bold;
+}
+
+h3 {
   @apply pb-2 text-2xl font-bold;
+}
+
+h4 {
+  @apply pb-2 text-lg font-bold;
 }
 
 p {

@@ -1,28 +1,24 @@
-<div class="global-container">
-  <div class="grid grid-cols-12 gap-8">
-    <div class="col-span-12">
-      <h2>Pet overview</h2>
-    </div>
-    <div class="col-span-3">
-      <app-filters (status)="getSelectedStatus($event)"></app-filters>
-    </div>
-    <div class="col-span-9">
-      <ng-container *ngIf="pets$ | async as pets; else loading">
-        <ng-container
-          *ngIf="pets.length > 0; else geenResultaat"
-        ></ng-container>
-        <ng-container *ngFor="let pet of pets">
-          <app-pet-item [petItem]="pet"></app-pet-item>
-        </ng-container>
+<div class="grid grid-cols-12 gap-8">
+  <div class="col-span-12">
+    <h2>Pet overview</h2>
+  </div>
+  <div class="col-span-3">
+    <app-filters (status)="getSelectedStatus($event)"></app-filters>
+  </div>
+  <div class="col-span-9">
+    <ng-container *ngIf="pets$ | async as pets; else loading">
+      <ng-container *ngIf="pets.length > 0; else geenResultaat"></ng-container>
+      <ng-container *ngFor="let pet of pets">
+        <app-pet-item [petItem]="pet"></app-pet-item>
       </ng-container>
+    </ng-container>
 
-      <ng-template #loading>
-        <p>Pets loading</p>
-      </ng-template>
+    <ng-template #loading>
+      <h4>Pets loading</h4>
+    </ng-template>
 
-      <ng-template #geenResultaat>
-        <h3>There are currently no animals with this status</h3>
-      </ng-template>
-    </div>
+    <ng-template #geenResultaat>
+      <h4>There are currently no animals with this status</h4>
+    </ng-template>
   </div>
 </div>
