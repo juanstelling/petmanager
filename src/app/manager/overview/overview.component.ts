@@ -11,7 +11,7 @@ export class OverviewComponent implements OnInit {
   defaultStatus: string = 'available';
   pets$!: Observable<Pet[]>;
 
-  constructor(private petService: PetsService) {}
+  constructor(private petsService: PetsService) {}
 
   ngOnInit(): void {
     this.pets$ = this.getPets(this.defaultStatus);
@@ -23,6 +23,6 @@ export class OverviewComponent implements OnInit {
   }
 
   getPets(status: string): Observable<Pet[]> {
-    return this.petService.getPets(status);
+    return this.petsService.getPets(status);
   }
 }

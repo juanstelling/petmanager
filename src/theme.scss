@@ -1,0 +1,97 @@
+$pets-palette: (
+  50: #e2eff7,
+  100: #b8d8eb,
+  200: #88bede,
+  300: #58a3d1,
+  400: #3590c7,
+  500: #117cbd,
+  600: #0f74b7,
+  700: #0c69ae,
+  800: #0a5fa6,
+  900: #054c98,
+  A100: #c4ddff,
+  A200: #91c0ff,
+  A400: #5ea2ff,
+  A700: #4594ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+// ? 1. Default theme
+$theming-material-components-primary: mat-palette($pets-palette);
+$theming-material-components-accent: mat-palette(
+  $pets-palette,
+  A200,
+  A100,
+  A400
+);
+$theming-material-components-warn: mat-palette($mat-red);
+
+$theming-material-components-theme: mat-light-theme(
+  $theming-material-components-primary,
+  $theming-material-components-accent,
+  $theming-material-components-warn
+);
+
+// ? 2. Define an alternate dark theme.
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent: mat-palette($mat-amber, A200, A100, A400);
+$dark-warn: mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+      warn: $dark-warn,
+    ),
+  )
+);
+
+// ? 3. Define a custom heading typography config
+$typography: mat-typography-config(
+  $font-family: var(--main-font),
+  $display-4: mat-typography-level(112px, 1.5em, 600),
+  $display-3: mat-typography-level(56px, 1.5em, 600),
+  $display-2: mat-typography-level(45px, 1.5em, 600),
+  $display-1: mat-typography-level(34px, 1.5em, 600),
+  $headline: mat-typography-level(32px, 1.5em, 600),
+  $title: mat-typography-level(40px, 1.5em, 300),
+  $subheading-2: mat-typography-level(34px, 1.5em, 500),
+  $subheading-1: mat-typography-level(18px, 1.5em, 300),
+  $body-2: mat-typography-level(16px, 1.5em, 500),
+  $body-1: mat-typography-level(16px, 1.5em, 400),
+  $caption: mat-typography-level(12px, 1.5em, 400),
+  $button: mat-typography-level(14px, 1.5em, 500),
+  $input: mat-typography-level(inherit, 1.5em, 400),
+);
+
+/*
+display-* is een titel die niet opgenomen wordt in de html structuur van een pagina. Gebruik in html als mat-display-1
+
+display-4 112px, one-off header, usually at the top of the page (e.g. a hero header).
+display-3 56px, one-off header, usually at the top of the page (e.g. a hero header).
+display-2 45px, one-off header, usually at the top of the page (e.g. a hero header).
+display-1 34px, one-off header, usually at the top of the page (e.g. a hero header).
+headline Section heading corresponding to the <h1 > tag.
+title Section heading corresponding to the <h2 > tag.
+subheading-2 Section heading corresponding to the <h3 > tag.
+subheading-1 Section heading corresponding to the <h4 > tag.
+body-1 Base body text.
+body-2 Bolder body text.
+caption Smaller body and hint text.
+button Buttons and anchors.
+input Form input fields.*/
