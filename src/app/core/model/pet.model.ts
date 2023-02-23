@@ -3,7 +3,7 @@ export interface Pet {
   category?: Category;
   name: string;
   photoUrls?: string[];
-  tag?: any;
+  tags?: any;
   status: string;
 }
 

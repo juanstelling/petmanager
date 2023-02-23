@@ -7,9 +7,28 @@
   </div>
   <div class="col-span-9">
     <ng-container *ngIf="pets$ | async as pets; else loading">
-      <ng-container *ngIf="pets.length > 0; else geenResultaat"></ng-container>
+      <ng-container *ngIf="pets.length > 0; else geenResultaat">
+      <div class="grid grid-cols-12 bg-green-900 p-3 text-white rounded-t-lg font-bold ">
+        <div class="col-span-3"><p>Id</p></div>
+        <div class="col-span-3"><p>Name</p></div>
+        <div class="col-span-3"><p>Status</p></div>
+        <div class="col-span-3"><p>tags</p></div>
+      </div>
+
       <ng-container *ngFor="let pet of pets">
-        <app-pet-item [petItem]="pet"></app-pet-item>
+        <div class="grid grid-cols-12 border border-b-3 p-3">
+          <div class="col-span-3"><p>{{ pet.id }}</p></div>
+          <div class="col-span-3"><p>{{ pet.name}}</p></div>
+          <div class="col-span-3"><p>{{ pet.status }}</p></div>
+          <div class="col-span-3">
+            <ng-container *ngFor="let tag of pet.tags">
+              <div class="tag">
+                {{tag.name}}
+              </div>  
+            </ng-container>
+          </div>
+        </div>
+      </ng-container>
       </ng-container>
     </ng-container>
   </div>

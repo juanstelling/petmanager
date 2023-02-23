@@ -10,7 +10,9 @@ export class OverviewComponent  {
   pets$ = this.petsService.pets$;
   petStatusAction$ = this.petsService.petStatusAction$;
 
-  constructor(private petsService: PetsService) {}
+  constructor(private petsService: PetsService) {
+    this.pets$.subscribe(data => console.log(data));
+  }
 
   getSelectedStatus(status: string): void {
     this.petsService.selectedStatus(status);
