@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PetsService } from 'src/app/core/services/pets.service';
-import { Category, Pet } from 'src/app/core/model/pet.model';
+import { Category } from 'src/app/core/model/pet.model';
 import { Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
 

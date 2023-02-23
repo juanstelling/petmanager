@@ -8,7 +8,7 @@ body {
 }
 
 .global-container {
-  @apply container mx-auto py-16;
+  @apply container min-h-screen mx-auto py-16;
 }
 
 .pet-item {
@@ -24,7 +24,7 @@ img {
 }
 
 .secundary-btn {
-  @apply w-full rounded-md bg-green-900  py-3 px-6 text-center text-white;
+  @apply w-60 rounded-md bg-green-900 py-3 px-6 text-center text-white;
 }
 
 /* ------------------------------------ Pet status */

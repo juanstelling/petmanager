@@ -1,14 +1,9 @@
 <div class="grid grid-cols-12 gap-8">
-  <div class="col-span-9">
+  <div class="col-span-12">
     <h2>Pet overview</h2>
   </div>
-  <div class="col-span-3"></div>
   <div class="col-span-3">
     <app-filters (status)="getSelectedStatus($event)"></app-filters>
-    <p class="mt-10 mb-2">Want to register a new pet?</p>
-    <div class="secundary-btn">
-      <a routerLink="/add-pet">Click here</a>
-    </div>
   </div>
   <div class="col-span-9">
     <ng-container *ngIf="pets$ | async as pets; else loading">
@@ -17,13 +12,13 @@
         <app-pet-item [petItem]="pet"></app-pet-item>
       </ng-container>
     </ng-container>
-
-    <ng-template #loading>
-      <h4>Pets loading</h4>
-    </ng-template>
-
-    <ng-template #geenResultaat>
-      <h4>There are currently no animals with this status</h4>
-    </ng-template>
   </div>
 </div>
+
+<ng-template #loading>
+  <h4>Pets loading</h4>
+</ng-template>
+
+<ng-template #geenResultaat>
+  <h4>There are currently no animals with this status</h4>
+</ng-template>
