@@ -8,27 +8,43 @@
   <div class="col-span-9">
     <ng-container *ngIf="pets$ | async as pets; else loading">
       <ng-container *ngIf="pets.length > 0; else geenResultaat">
-      <div class="grid grid-cols-12 bg-green-900 p-3 text-white rounded-t-lg font-bold ">
-        <div class="col-span-3"><p>Id</p></div>
-        <div class="col-span-3"><p>Name</p></div>
-        <div class="col-span-3"><p>Status</p></div>
-        <div class="col-span-3"><p>tags</p></div>
-      </div>
-
-      <ng-container *ngFor="let pet of pets">
-        <div class="grid grid-cols-12 border border-b-3 p-3">
-          <div class="col-span-3"><p>{{ pet.id }}</p></div>
-          <div class="col-span-3"><p>{{ pet.name}}</p></div>
-          <div class="col-span-3"><p>{{ pet.status }}</p></div>
-          <div class="col-span-3">
-            <ng-container *ngFor="let tag of pet.tags">
-              <div class="tag">
-                {{tag.name}}
-              </div>  
-            </ng-container>
-          </div>
+        <div
+          class="grid grid-cols-12 rounded-t-lg bg-green-900 p-3 font-bold text-white"
+        >
+          <div class="col-span-2"><p>Id</p></div>
+          <div class="col-span-4"><p>Name</p></div>
+          <div class="col-span-3"><p>Status</p></div>
+          <div class="col-span-3"><p>Tags</p></div>
         </div>
-      </ng-container>
+
+        <ng-container *ngFor="let pet of pets">
+          <div class="border-b-3 grid grid-cols-12 border p-3">
+            <div class="col-span-2">
+              <p>{{ pet.id }}</p>
+            </div>
+            <div class="col-span-4">
+              <p>{{ pet.name }}</p>
+            </div>
+            <div class="col-span-3">
+              <p
+                [ngClass]="{
+                  available: pet.status === 'available',
+                  pending: pet.status === 'pending',
+                  sold: pet.status === 'sold'
+                }"
+              >
+                {{ pet.status }}
+              </p>
+            </div>
+            <div class="col-span-3">
+              <ng-container *ngFor="let tag of pet.tags">
+                <span class="tag">
+                  {{ tag.name }}
+                </span>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
       </ng-container>
     </ng-container>
   </div>

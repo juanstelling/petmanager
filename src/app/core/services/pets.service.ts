@@ -9,28 +9,23 @@ import { Pet } from '../model/pet.model';
 export class PetsService {
   private petsUrl: string = 'https://petstore3.swagger.io/api/v3/pet/';
 
-  private petStatusSubject = new BehaviorSubject<string>('available')
+  private petStatusSubject = new BehaviorSubject<string>('available');
   petStatusAction$ = this.petStatusSubject.asObservable();
 
   pets$ = this.petStatusAction$.pipe(
-    switchMap(status => {
-      let options= {params: new HttpParams().set('status', status)}
-      return this.http.get<Pet[]>(`${this.petsUrl}findByStatus`, options)
+    switchMap((status) => {
+      let options = { params: new HttpParams().set('status', status) };
+      return this.http.get<Pet[]>(`${this.petsUrl}findByStatus`, options);
     }),
     shareReplay(1),
-    tap(data => console.log(data))
-  )
+    tap((data) => console.log(data))
+  );
 
   constructor(private http: HttpClient) {}
 
-  selectedStatus(status : string): void {
+  selectedStatus(status: string): void {
     this.petStatusSubject.next(status);
   }
-
-  // getPets(petStatus: string): Observable<Pet[]> {
-  //   let options = {params: new HttpParams().set('status', petStatus)};
-  //   return this.http.get<Pet[]>(this.petsUrl + 'findByStatus', options);
-  // }
 
   addPet(pet: Pet): Observable<Pet> {
     const headers = new HttpHeaders();

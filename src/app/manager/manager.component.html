@@ -1,10 +1,15 @@
-<div class="grid-cols-12 grid bg-gray-900 py-6 px-12">
-  <div class="col-span-6 ">
-    <a routerLink="" class="title">Pets&co.</a>
-  </div>
-  <div class="col-span-6 ">
-    <div class="secundary-btn float-right">
-      <a class="font-bold" routerLink="/add-pet" >Register new pet</a>
+<div class="header">
+  <div class="grid grid-cols-12">
+    <div class="col-span-6">
+      <a routerLink="" class="title">Pets&co.</a>
+    </div>
+    <div class="col-span-6">
+      <a class="float-right font-bold text-white" routerLink="/add-pet"
+        >Register new pet</a
+      >
+      <!-- <button class="secundary-btn float-right">
+        
+      </button> -->
     </div>
   </div>
 </div>
@@ -13,7 +18,7 @@
   <router-outlet></router-outlet>
 </div>
 
-<div class="grid-cols-12 grid">
+<div class="grid grid-cols-12">
   <div class="col-span-12 bg-gray-900 py-3">
     <p class="px-6 text-white">
       Powered by Juan Stelling | {{ getCurrentYear() }}

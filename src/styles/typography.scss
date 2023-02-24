@@ -19,9 +19,5 @@ p {
 }
 
 .title {
-  @apply  text-4xl font-bold uppercase text-white;
-}
-
-.status-title {
-  @apply pb-5 font-bold;
+  @apply text-4xl font-bold uppercase text-white;
 }

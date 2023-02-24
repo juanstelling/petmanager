@@ -7,16 +7,12 @@ body {
   @apply m-0;
 }
 
+.header {
+  @apply mx-auto bg-gray-900 py-6 px-16;
+}
+
 .global-container {
-  @apply container min-h-screen mx-auto py-16;
-}
-
-.pet-item {
-  @apply mb-3 border border-gray-100 shadow-md;
-}
-
-img {
-  @apply lg:w-40;
+  @apply container mx-auto min-h-screen py-10;
 }
 
 .primary-btn {
@@ -27,15 +23,26 @@ img {
   @apply w-60 rounded-md bg-green-900 py-3 px-6 text-center text-white;
 }
 
+.tag {
+  @apply m-1 w-fit  rounded-md bg-blue-100 p-1;
+}
+
 /* ------------------------------------ Pet status */
+.status {
+  @apply font-bold;
+}
+
 .available {
-  @apply text-green-800;
+  @extend .status;
+  @apply text-green-700;
 }
 
 .pending {
+  @extend .status;
   @apply text-yellow-700;
 }
 
 .sold {
+  @extend .status;
   @apply text-red-800;
 }
